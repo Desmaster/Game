@@ -14,13 +14,10 @@ import net.sourceforge.desmaster.entity.Commands;
 import net.sourceforge.desmaster.entity.Fight;
 import net.sourceforge.desmaster.entity.Jump;
 import net.sourceforge.desmaster.entity.Player;
+import net.sourceforge.desmaster.gui.Launcher;
 import net.sourceforge.desmaster.image.ImageContainer;
 import net.sourceforge.desmaster.input.InputHandler;
 import net.sourceforge.desmaster.level.Level;
-import net.sourceforge.desmaster.physx.AABB;
-import net.sourceforge.desmaster.physx.Circle;
-import net.sourceforge.desmaster.physx.CollisionLibrary;
-import net.sourceforge.desmaster.physx.Vector;
 
 public class Skyrim extends Canvas implements Runnable {
 
@@ -189,22 +186,6 @@ public class Skyrim extends Canvas implements Runnable {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		//Launcher launcher = new Launcher();
-		Circle circle = new Circle(5);
-	      AABB box = new AABB(10, 5);
-	      Vector somePosition = new Vector();
-	      somePosition.x = 10;
-	      somePosition.y = 5;
-	      
-	      // make sure to update the position of the colliders before testing for them
-	      box.update(somePosition);
-	      circle.update(somePosition);
-	      
-	      // test for overlap
-	      if(CollisionLibrary.testCircleAABB(circle, box)) {
-	         say("collision!");
-	      } else {
-	         say("no collision!");
-	      }
+		Launcher launcher = new Launcher();
 	}
 }
